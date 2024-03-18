@@ -1,0 +1,61 @@
+
+<form [formGroup]="deleteForm">
+  <mat-card class="background">
+    <div class="row">
+      <div class="col">
+        <mat-card-header>
+          <mat-card-title style="font-size:larger; font-weight: bold; color: rgb(28, 104, 151);"> DELETE BASE </mat-card-title>
+        </mat-card-header>
+      </div>
+      <div class="col">
+        <mat-card-header>
+         <button style="margin-left: auto;" mat-mini-fab color="primary" type="button" aria-label="Example icon button with a home icon" class="d-block mr-0 ml-auto" onClick="history.back()">
+            <span class="material-icons" style="color: white;">exit_to_app</span>
+          </button>
+        </mat-card-header>
+      </div>
+    </div><br>
+
+    <div class="row">
+      <div class="col">
+        <mat-form-field class="full-width">
+          <mat-select placeholder="Type" formControlName="type">
+            <mat-option *ngFor="let item of type" [value]="item.type">
+              {{item.type}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="col">
+        <mat-form-field class="full-width">
+          <mat-select placeholder="Project Name" formControlName="projectId">
+            <mat-option *ngFor="let item of project$ | async" [value]="item.id">
+              {{item.projectName}}
+            </mat-option>
+            &nbsp;&nbsp; &nbsp;&nbsp;<span class="material-icons" style="font-size: 30px; color: rgb(28, 104, 151);">playlist_add</span>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="col">
+        <mat-form-field class="full-width">
+          <mat-select placeholder="Status" formControlName="status">
+            <mat-option *ngFor="let item of status" [value]="item.id">
+              {{item.status}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+    </div>
+
+    <mat-card-actions>
+      <button  mat-raised-button  type="button" (click)="onDeleteFun()" [disabled]="deleteForm.pristine ||!deleteForm.valid">
+        DELETE
+      </button>&nbsp;&nbsp;
+    </mat-card-actions>
+  </mat-card>
+</form>
+
+

@@ -1,0 +1,70 @@
+
+ <!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+<mat-card *ngIf="users">
+  <mat-card-header>
+    <mat-card-title style="color: rgb(28, 104, 151); font-size: larger; font-weight: bold; ">PROFILE</mat-card-title>
+  </mat-card-header><br><br>
+
+  <div class="row box">
+    <div class="card">
+      <ng-container *ngIf="users.file_url; else alternativeImage">
+        <div class="image-container">
+          <img class="profile-photo" src="{{ users.file_url }}" />
+          <!-- <label *ngIf="!uploadStatus" for="fileInput" class="custom-file-upload">
+            <i class="fa fa-cloud-upload" style="font-size: 40px; cursor: pointer;"></i>
+          </label>
+          <input type="file" id="fileInput" style="display: none;" (change)="onFileSelected($event)" />
+          <i *ngIf="uploadStatus" (click)="onUpload()" class="edit-icon fa fa-pencil" style="font-size: 40px; cursor: pointer;"></i> -->
+        </div>
+      </ng-container>
+
+      <ng-template #alternativeImage>
+        <div class="image-container">
+          <img src="../../../../../../assets/img/no_image_part.png" alt="Alternative Image" style="width: 250px; height: 250px;" />
+          <label *ngIf="!uploadStatus" for="fileInput" class="custom-file-upload">
+            <!-- <i class="fa fa-cloud-upload" style="font-size: 40px; cursor: pointer;"></i> -->
+          </label>
+          <input type="file" id="fileInput" (change)="onFileSelected($event)" style="display: none;" />
+          <i *ngIf="uploadStatus" (click)="onUpload()" class="edit-icon fa fa-pencil" style="font-size: 40px; cursor: pointer;"></i>
+        </div>
+      </ng-template>
+      <h1>{{users.name}}</h1>
+      <p class="title">{{users.employeeNo}}</p>
+      <p>{{users.role.roleName}}</p>
+      <p>{{users.email}}</p>
+      <p>{{users.phoneNumber}}</p>
+      <div style="margin: 24px 0;">
+        <a (click)="editProfile()"><i class="fa fa-edit"></i></a>
+      </div>
+      <!-- <p><button>Contact</button></p> -->
+    </div>
+
+    <div class="card">
+      <h1>Report</h1>
+      <p class="title">Today</p>
+      <p>Assigned : {{assignedToday}}</p>
+      <p>Followup : {{todayCount}}</p><br>
+      <p>Completed : {{comCall}}</p>
+      <p>Completed Followup : {{todayComCount}}</p>
+      <p>Pending : {{pendCall}}</p>
+      <p>New Followup : {{followCount}}</p>
+      <br>
+      <p class="title">Month</p>
+      <p>Assigned : {{assignedMonth}}</p>
+      <p>Followup : {{pendingCount}}</p><br>
+      <p>Completed : {{comCallMonth}}</p>
+      <p>Completed Followup : {{monthComCount}}</p>
+      <p>New Followup : {{followCountMonth}}</p>
+      <p><button routerLink="viewreport">View Detailed</button></p>
+
+      <!-- <p><button>Contact</button></p> -->
+    </div>
+  </div>
+</mat-card>
+

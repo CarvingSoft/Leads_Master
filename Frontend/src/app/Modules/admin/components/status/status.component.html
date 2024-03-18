@@ -1,0 +1,73 @@
+
+<form [formGroup]="statusForm" (ngSubmit)="onSubmit()">
+  <mat-card class="background">
+    <div class="row">
+      <div class="col">
+        <mat-card-header>
+          <mat-card-title style="font-size:larger; font-weight: bold; color: rgb(28, 104, 151);"> STATUS </mat-card-title>
+        </mat-card-header>
+      </div>
+      <div class="col">
+        <mat-card-header>
+         <button style="margin-left: auto;" mat-mini-fab color="primary" type="button" aria-label="Example icon button with a home icon" class="d-block mr-0 ml-auto" onClick="history.back()">
+            <span class="material-icons" style="color: white;">exit_to_app</span>
+          </button>
+        </mat-card-header>
+      </div>
+    </div><br>
+    <mat-card-content>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Status" formControlName="status">
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button *ngIf="isEdit == false" mat-raised-button  type="submit" [disabled]="!statusForm.valid">
+        <span class="material-icons" style="font-size: 25px;">save</span>
+      </button>&nbsp;&nbsp;
+      <button *ngIf="isEdit == true" mat-raised-button  type="button" [disabled]="!statusForm.valid" (click)="editFunction()">
+        <span class="material-icons" style="font-size: 30px;">edit_note</span>
+      </button>&nbsp;&nbsp;
+    </mat-card-actions>
+  </mat-card>
+</form>
+
+
+<!-- --------------------------------------------------------------------------------------------------------------------------- -->
+
+<br><mat-card>
+  <mat-card-header>
+    <mat-card-title style="color: rgb(28, 104, 151);"> BRANDS </mat-card-title>
+  </mat-card-header>
+  <table mat-table *ngIf="status" [dataSource]="status" class="mat-elevation-z8">
+
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef>Status</th>
+      <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="manage">
+      <th mat-header-cell *matHeaderCellDef>Manage</th>
+      <td mat-cell [style.background-color]="element.slotStatus == true ? 'lightgreen' : null" *matCellDef="let element">
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+      <i  (click)="editStatus(element.id)"  class="fa fa-edit" style="font-size: 20px; color:green"></i>
+      &nbsp;&nbsp;
+      <i  (click)="deleteStatus(element.id)" class="fa fa-trash" style="font-size: 20px; color:red"></i>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</mat-card>

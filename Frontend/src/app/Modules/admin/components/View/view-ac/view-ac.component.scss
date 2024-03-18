@@ -1,0 +1,84 @@
+/* by Jamal Hassouni*/
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+body{
+  margin: 0;
+  padding: 0;
+ font-family: 'Roboto', sans-serif !important;
+}
+section{
+  width: 100%;
+  height: 100vh;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+          padding: 140px 0;
+}
+.card{
+  position: relative;
+  max-width: 300px;
+  height: auto;
+  border-radius: 15px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  -webkit-box-shadow: 0 10px 15px rgba(0,0,0,.1) ;
+          box-shadow: 0 10px 15px rgba(0,0,0,.1) ;
+-webkit-transition: .5s;
+transition: .5s;
+}
+.card:hover{
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.card::before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: rgba(255, 255, 255, .1);
+z-index: 1;
+-webkit-transform: skewY(-5deg) scale(1.5);
+        transform: skewY(-5deg) scale(1.5);
+}
+.title .fa{
+  color:black;
+  font-size: 60px;
+  width: 100px;
+  height: 100px;
+  border-radius:  50%;
+  text-align: center;
+  line-height: 100px;
+  -webkit-box-shadow: 0 10px 10px rgba(0,0,0,.1) ;
+          box-shadow: 0 10px 10px rgba(0,0,0,.1) ;
+
+}
+.title h2 {
+  position: relative;
+  margin: 20px  0 0;
+  padding: 0;
+  color: black;
+  font-size: 28px;
+ z-index: 2;
+}
+.price,.option{
+  position: relative;
+  z-index: 2;
+}
+
+.option ul {
+  margin: 0;
+  padding: 0;
+
+}
+.option ul li {
+margin: 0 0 10px;
+padding: 0;
+list-style: none;
+color: black;
+font-size: 16px;
+}
+
+.card a:hover{
+    text-decoration: none;
+}

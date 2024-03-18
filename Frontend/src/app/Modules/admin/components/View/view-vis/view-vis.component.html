@@ -1,0 +1,50 @@
+<html>
+
+<body>
+<section *ngIf="base">
+  <div class="container-fluid">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="card text-center">
+            <div class="title">
+              <!-- <i class="fa fa-paper-plane" aria-hidden="true"></i> -->
+              <h2>Name: {{base.custName}}</h2>
+              <h2>campionName: {{base.campionName}}</h2><br>
+            </div>
+            <div class="option">
+              <ul>
+              <li> <i class="fa fa-check" aria-hidden="true"></i> Current Plan: {{base.currentPlan}} </li>
+              <li> <i class="fa fa-check" aria-hidden="true"></i> Mobile Number: {{base.mobileNumber}} </li>
+              <li> <i class="fa fa-check" aria-hidden="true"></i> No of Connections: {{base.noOfConnections}} </li>
+              <li> <i class="fa fa-check" aria-hidden="true"></i> Suggested Plan: {{base.suggestedPlan}} </li>
+              <li> <i class="fa fa-check" aria-hidden="true"></i> PinCode: {{base.pinCode}} </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- END Col one -->
+        <div class="col-sm-4">
+          <div class="card text-center">
+            <div class="title">
+              <i class="fa fa-plane" aria-hidden="true"></i>
+              <h2>Status: {{base.callStatus.status}}</h2><br>
+            </div>
+            <div class="option">
+              <ul>
+              <li> <i class="fa fa-check" aria-hidden="true"></i> Remarks: {{base.remarks}} </li>
+              <li> <i class="fa fa-check" aria-hidden="true"></i> FreeText: {{base.freeText}} </li>
+              <li> <i class="fa fa-times" aria-hidden="true"></i> Action: {{base.action}} </li>
+              <li> <i class="fa fa-check" aria-hidden="true"></i> TeleCaller: {{base.teleCaller.name}} </li>
+              <li> <i class="fa fa-check" aria-hidden="true"></i> Date: {{base.callTime | date: 'dd/MM'}} </li>
+              <li> <i class="fa fa-times" aria-hidden="true"></i> Time: {{base.callTime | date: 'hh:mm'}} </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>

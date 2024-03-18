@@ -1,0 +1,54 @@
+<html>
+
+<body>
+<section *ngIf="base">
+  <div class="container-fluid">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="card text-center">
+            <div class="title">
+              <!-- <i class="fa fa-paper-plane" aria-hidden="true"></i> -->
+              <h2>Name: {{base.Name}}</h2>
+              <h2>Subcode: {{base.Subcode}}</h2><br>
+            </div>
+            <div class="option">
+              <ul>
+              <li> <i class="fa fa-check" aria-hidden="true"></i> Region: {{base.Region}} </li>
+              <li> <i class="fa fa-check" aria-hidden="true"></i> Address: {{base.Address}} </li>
+              <li> <i class="fa fa-check" aria-hidden="true"></i> Address1: {{base.Address1}} </li>
+              <li> <i class="fa fa-check" aria-hidden="true"></i> Address2: {{base.Address2}} </li>
+              <li> <i class="fa fa-check" aria-hidden="true"></i> Package: {{base.Package}} </li>
+              <li> <i class="fa fa-check" aria-hidden="true"></i> Scheme: {{base.Scheme}} </li>
+              <li> <i class="fa fa-check" aria-hidden="true"></i> Phone: {{base.Phone}} </li>
+              <li> <i class="fa fa-check" aria-hidden="true"></i> Mobile: {{base.Mobile}} </li>
+              <li> <i class="fa fa-check" aria-hidden="true"></i> Balance: {{base.Balance}} </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- END Col one -->
+        <div class="col-sm-4">
+          <div class="card text-center">
+            <div class="title">
+              <i class="fa fa-plane" aria-hidden="true"></i>
+              <h2>Status: {{base.status.status}}</h2><br>
+            </div>
+            <div class="option">
+              <ul>
+              <li> <i class="fa fa-check" aria-hidden="true"></i> Remarks: {{base.remarks}} </li>
+              <li> <i class="fa fa-check" aria-hidden="true"></i> FreeText: {{base.freeText}} </li>
+              <li> <i class="fa fa-times" aria-hidden="true"></i> Action: {{base.action}} </li>
+              <li> <i class="fa fa-check" aria-hidden="true"></i> TeleCaller: {{base.teleCaller.name}} </li>
+              <li> <i class="fa fa-check" aria-hidden="true"></i> Date: {{base.callTime | date: 'dd/MM'}} </li>
+              <li> <i class="fa fa-times" aria-hidden="true"></i> Time: {{base.callTime | date: 'hh:mm'}} </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>

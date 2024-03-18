@@ -1,0 +1,131 @@
+<form [formGroup]="editForm">
+  <mat-card class="background">
+    <div class="row">
+      <div class="col">
+        <mat-card-header>
+          <mat-card-title style="font-size:larger; font-weight: bold; color: rgb(28, 104, 151);"> EDIT VI COLLECTIONS </mat-card-title>
+        </mat-card-header>
+      </div>
+    </div><br>
+    <mat-card-content>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Region" formControlName="Region">
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Subcode" formControlName="Subcode">
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Name" formControlName="Name">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Address" formControlName="Address">
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Address" formControlName="Address1">
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Address" formControlName="Address2">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Phone" formControlName="Phone">
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Mobile" formControlName="Mobile">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Package" formControlName="Package">
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Scheme" formControlName="Scheme">
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Balance" formControlName="Balance">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Status" formControlName="status">
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Teleby" formControlName="Teleby">
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Action" formControlName="action">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Remarks" formControlName="remarks">
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="FreeText" formControlName="freeText">
+          </mat-form-field>
+        </div>
+      </div>
+
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-raised-button  type="button" [disabled]="!editForm.valid" (click)="editFunction()">
+        <span class="material-icons" style="font-size: 30px;">edit_note</span>
+      </button>&nbsp;&nbsp;
+      <button mat-raised-button  type="button" (click)="onCancelClick()">
+        <span class="material-icons" style="font-size: 30px;">cancel_presentation</span>
+      </button>&nbsp;&nbsp;
+    </mat-card-actions>
+  </mat-card>
+</form>

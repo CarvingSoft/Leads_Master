@@ -1,0 +1,18 @@
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.full-width{
+  width: 100%;
+}
+
+button:enabled {
+  background-color :rgb(28, 104, 151);
+  color : white
+}

@@ -1,0 +1,63 @@
+
+
+<!-- Upload  -->
+<form [formGroup]="baseForm" (ngSubmit)="onSubmit()">
+  <mat-card class="background">
+    <div class="row">
+      <div class="col">
+        <mat-card-header>
+          <mat-card-title style="font-size:larger; font-weight: bold; color: rgb(28, 104, 151);"> PROJECT BASE </mat-card-title>
+        </mat-card-header>
+      </div>
+      <div class="col">
+        <mat-card-header>
+         <button style="margin-left: auto;" mat-mini-fab color="primary" type="button" aria-label="Example icon button with a home icon" class="d-block mr-0 ml-auto" onClick="history.back()">
+            <span class="material-icons" style="color: white;">exit_to_app</span>
+          </button>
+        </mat-card-header>
+      </div>
+    </div><br>
+
+    <div class="row">
+      <div class="col">
+        <mat-form-field class="full-width">
+          <mat-select placeholder="Project Name" formControlName="projectId">
+            <mat-option *ngFor="let item of project$ | async" [value]="item.id">
+              {{item.projectName}}
+            </mat-option>
+            <!-- &nbsp;&nbsp; &nbsp;&nbsp;<span class="material-icons" style="font-size: 30px; color: rgb(28, 104, 151);" (click)="addProject()">playlist_add</span> -->
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="col">
+        <div class="uploader">
+          <input id="file-upload" type="file" (change)="fileUpload($event)"  name="fileUpload" accept=".xls, .xlsx" />
+
+          <label for="file-upload" id="file-drag">
+            <img id="file-image" src="#" alt="Preview" class="hidden">
+            <div id="start">
+              <i class="fa fa-download" aria-hidden="true"></i>
+              <div>Select a file or drag here</div>
+              <div id="notimage" class="hidden">Please select an image</div>
+              <span id="file-upload-btn" class="btn btn-primary">Select a file</span>
+            </div>
+            <div id="response" class="hidden">
+              <div id="messages"></div>
+              <mat-progress-bar *ngIf="isUploading" mode="indeterminate" [value]="uploadProgress"></mat-progress-bar>
+            </div>
+          </label>
+        </div>
+      </div>
+
+    </div>
+
+    <mat-card-actions>
+      <button  mat-raised-button  type="submit" [disabled]="!baseForm.valid || !btnStat">
+        <span class="material-icons" style="font-size: 25px;">save</span>
+      </button>&nbsp;&nbsp;
+    </mat-card-actions>
+  </mat-card>
+</form>
+
+
